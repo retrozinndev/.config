@@ -7,8 +7,8 @@
       "left": 2
     },
     "type": "kitty",
-    "source": "$XDG_CONFIG_HOME/fastfetch/images/chisato_point.png",
-    "width": 36
+    "source": "$XDG_CONFIG_HOME/fastfetch/images/mini_patchouli_reading.png",
+    "width": 30
   },
   "display": {
     "separator": " ",

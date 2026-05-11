@@ -1,0 +1,11 @@
+hl.config {
+    misc = {
+        disable_hyprland_logo = false;
+        force_default_wallpaper = 1;
+
+        anr_missed_pings = 5;
+
+        focus_on_activate = false;
+        on_focus_under_fullscreen = 1;
+    };
+};

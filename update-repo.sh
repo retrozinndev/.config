@@ -51,7 +51,7 @@ function Update_local() {
             local base_path=${file#"$XDG_CONFIG_HOME/"} # trims the "~/.config/" part, leaving the relative directory to the repo structure
             local base_dir=`dirname "./$base_path"` # same thing here, but we get the base directory instead of the file name
             
-            echo "dir: '$dir' ; base_name: './$base_path' ; base_dir: '$base_dir'"
+            #echo "dir: '$dir' ; base_name: './$base_path' ; base_dir: '$base_dir'"
 
             # this only works with depth 1 for raw directories or with a full file path, unfortunately
             (Check_ignore "$base_dir" || Check_ignore "$base_path") && \
