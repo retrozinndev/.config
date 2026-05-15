@@ -6,13 +6,14 @@
 hl.bind("SUPER + F11", hl.dsp.window.fullscreen());
 
 
-hl.bind("SUPER + K", hl.dsp.exec_cmd("colorshell run -a terminal"));
+hl.bind("SUPER + K", hl.dsp.exec_cmd("kitty"));
 hl.bind("SUPER + Q", hl.dsp.window.close());
-hl.bind("SUPER + E", hl.dsp.exec_cmd("colorshell run -a file_manager"));
+hl.bind("SUPER + E", hl.dsp.exec_cmd("nautilus"));
 hl.bind("SUPER + F", hl.dsp.window.float());
 hl.bind("SUPER + P", hl.dsp.window.pseudo());
 hl.bind("SUPER + T", hl.dsp.window.pin());
 hl.bind("SUPER + J", hl.dsp.layout("togglesplit"));
+hl.bind("SUPER + R", hl.dsp.exec_cmd("hyprland-run")); -- for emergency reasons
 
 hl.bind("SUPER + S", hl.dsp.workspace.toggle_special("sound"));
 hl.bind("SUPER + SHIFT + S", hl.dsp.window.move({

@@ -2,6 +2,8 @@
 My personal dotfiles for [colorshell](https://github.com/retrozinndev/colorshell).
 
 Includes configs like `fastfetch`, `kitty` and `Hyprland` + `colorshell` configs.
+Also, this config implements support for [XDG Autostart](https://wiki.archlinux.org/title/XDG_Autostart) even if you're not using 
+[UWSM](https://wiki.archlinux.org/title/Universal_Wayland_Session_Manager)! (you might want to disable it in `autostart.lua` if you're using UWSM)
 
 ## Icon Theme
 I personally use the [MoreWaita](https://github.com/somepaulo/MoreWaita) icon theme, it has a lot of symbolic icons, so colorshell looks a lot better.

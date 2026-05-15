@@ -68,7 +68,7 @@ hl.window_rule({
 hl.window_rule({
     name = "center-floating-apps";
     match = {
-        class = "^(moe\\.launcher\\..*|org.gnome.Nautilus|com.github.rafostar.Clapper|io.mrarm.mcpelauncher-ui-qt|net.nokyan.Resources|org.gnome.TextEditor|nm-connection-editor|org.pulseaudio.pavucontrol|io.github.kaii_lb.Overskride|xdg-desktop-portal(-gtk)?|io.bassi.Amberol)$";
+        class = "^(moe\\.launcher\\..*|org.gnome.Nautilus|com.github.rafostar.Clapper|io.mrarm.mcpelauncher-ui-qt|net.nokyan.Resources|org.gnome.TextEditor|nm-connection-editor|org.pulseaudio.pavucontrol|io.github.kaii_lb.Overskride|xdg-desktop-portal(-gtk)?|io.bassi.Amberol|warp-taskbar)$";
     };
 
     float = true;
@@ -126,6 +126,7 @@ hl.window_rule({
     no_blur = true;
 });
 hl.window_rule({ match = { class = "^(org.kde.kdeconnect..*)$" }, no_blur = true });
+hl.window_rule({ match = { class = ".*" }, suppress_event = "maximize" });
 
 hl.window_rule({
     name = "fix-anydesk-text-entry";

@@ -25,11 +25,16 @@ local env = {
 
     ADW_DISABLE_PORTAL = 0;
     JAVA_HOME = "/lib/jvm/default";
-};
 
-env_path_append(os.getenv("HOME") .. "/.local/bin");
-env_path_append(os.getenv("HOME") .. "/.cargo/bin");
+    -- XDG
+    XDG_CACHE_HOME = os.getenv("HOME") .. "/.cache";
+    XDG_DATA_HOME = os.getenv("HOME") .. "/.local/share";
+    XDG_CONFIG_HOME = os.getenv("HOME") .. "/.config";
+};
 
 for name, val in pairs(env) do
     hl.env(name, val);
 end
+
+env_path_append(os.getenv("HOME") .. "/.local/bin");
+env_path_append(os.getenv("HOME") .. "/.cargo/bin");
