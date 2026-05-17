@@ -4,8 +4,18 @@
 --hl.bind("SUPER + SUPER_L", hl.dsp.exec_cmd("colorshell toggle -w apps-window"));
 
 hl.bind("SUPER + F11", hl.dsp.window.fullscreen());
+hl.bind(" + Print", hl.dsp.exec_cmd("colorshell screenshot"));
+hl.bind("ALT + Print", hl.dsp.exec_cmd("colorshell screenshot active"));
+hl.bind("SUPER + Print", hl.dsp.exec_cmd("colorshell screenshot full"));
+hl.bind("SUPER + SPACE", hl.dsp.exec_cmd("colorshell runner"));
+hl.bind("SUPER + SUPER_L", hl.dsp.exec_cmd("colorshell peek-workspaces"));
 
 
+hl.bind("SUPER + N", hl.dsp.exec_cmd("colorshell toggle -w control-center"));
+hl.bind("SUPER + M", hl.dsp.exec_cmd("colorshell toggle -w center-window"));
+hl.bind("SUPER + L", hl.dsp.exec_cmd("colorshell lock"));
+hl.bind("SUPER + V", hl.dsp.exec_cmd("colorshell runner -t '\\>'"));
+hl.bind("SUPER + W", hl.dsp.exec_cmd("colorshell runner -t '\\#'"));
 hl.bind("SUPER + K", hl.dsp.exec_cmd("kitty"));
 hl.bind("SUPER + Q", hl.dsp.window.close());
 hl.bind("SUPER + E", hl.dsp.exec_cmd("nautilus"));
@@ -77,32 +87,26 @@ hl.bind("CTRL + SUPER + left", hl.dsp.focus({
     workspace = "e-1"
 }));
 
+-- Switch workspaces with SUPER + [1-9,0] &
+-- move active window to workspace with SUPER + SHIFT + [1-9,0]
+for i = 1, 10, 1 do
+    local num = i >= 10 and 0 or i;
 
--- Switch workspaces with SUPER + [0-9]
-hl.bind("SUPER + 1", hl.dsp.focus({ workspace = 1 }));
-hl.bind("SUPER + 2", hl.dsp.focus({ workspace = 2 }));
-hl.bind("SUPER + 3", hl.dsp.focus({ workspace = 3 }));
-hl.bind("SUPER + 4", hl.dsp.focus({ workspace = 4 }));
-hl.bind("SUPER + 5", hl.dsp.focus({ workspace = 5 }));
-hl.bind("SUPER + 6", hl.dsp.focus({ workspace = 6 }));
-hl.bind("SUPER + 7", hl.dsp.focus({ workspace = 7 }));
-hl.bind("SUPER + 8", hl.dsp.focus({ workspace = 8 }));
-hl.bind("SUPER + 9", hl.dsp.focus({ workspace = 9 }));
-hl.bind("SUPER + 0", hl.dsp.focus({ workspace = 10 }));
-
-
--- Move active window to a workspace with SUPER + SHIFT + [0-9]
-hl.bind("SUPER + SHIFT + 1", hl.dsp.window.move({ workspace = 1 }));
-hl.bind("SUPER + SHIFT + 2", hl.dsp.window.move({ workspace = 2 }));
-hl.bind("SUPER + SHIFT + 3", hl.dsp.window.move({ workspace = 3 }));
-hl.bind("SUPER + SHIFT + 4", hl.dsp.window.move({ workspace = 4 }));
-hl.bind("SUPER + SHIFT + 5", hl.dsp.window.move({ workspace = 5 }));
-hl.bind("SUPER + SHIFT + 6", hl.dsp.window.move({ workspace = 6 }));
-hl.bind("SUPER + SHIFT + 7", hl.dsp.window.move({ workspace = 7 }));
-hl.bind("SUPER + SHIFT + 8", hl.dsp.window.move({ workspace = 8 }));
-hl.bind("SUPER + SHIFT + 9", hl.dsp.window.move({ workspace = 9 }));
-hl.bind("SUPER + SHIFT + 0", hl.dsp.window.move({ workspace = 10 }));
+    hl.bind("SUPER + "..num, hl.dsp.focus({ workspace = i }));
+    hl.bind("SUPER + SHIFT + "..num, hl.dsp.window.move({ workspace = i }));
+end
 
 -- Move/resize windows with SUPER + LMB/RMB and dragging
 hl.bind("SUPER + mouse:272", hl.dsp.window.drag());
 hl.bind("SUPER + mouse:273", hl.dsp.window.resize());
+
+-- Media & backlight
+hl.bind("XF86AudioLowerVolume", hl.dsp.exec_cmd("colorshell volume -d sink -m 5"), { repeating = true });
+hl.bind("XF86AudioRaiseVolume", hl.dsp.exec_cmd("colorshell volume -d sink -p 5"), { repeating = true });
+hl.bind("XF86AudioMute", hl.dsp.exec_cmd("colorshell volume -d sink mute"));
+hl.bind("XF86AudioPrev", hl.dsp.exec_cmd("colorshell media previous"));
+hl.bind("XF86AudioNext", hl.dsp.exec_cmd("colorshell media next"));
+hl.bind("XF86AudioPlay", hl.dsp.exec_cmd("colorshell media play-pause"));
+
+hl.bind("XF86MonBrightnessDown", hl.dsp.exec_cmd("brightnessctl -c backlight s 5%-"));
+hl.bind("XF86MonBrightnessUp", hl.dsp.exec_cmd("brightnessctl -c backlight s +5%"));
