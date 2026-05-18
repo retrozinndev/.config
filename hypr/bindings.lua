@@ -55,16 +55,16 @@ hl.bind("SUPER + SHIFT + C", hl.dsp.window.center());
 
 -- Resize windows with arrow keys / hjkl
 hl.bind("SUPER + ALT + left", hl.dsp.window.resize({
-    x = -60, y = 0
+    x = -60, y = 0, relative = true
 }), { repeating = true });
 hl.bind("SUPER + ALT + down", hl.dsp.window.resize({
-    x = 0, y = 60
+    x = 0, y = 60, relative = true
 }), { repeating = true });
 hl.bind("SUPER + ALT + up", hl.dsp.window.resize({
-    x = 0, y = -60
+    x = 0, y = -60, relative = true
 }), { repeating = true });
 hl.bind("SUPER + ALT + right", hl.dsp.window.resize({
-    x = 60, y = 0
+    x = 60, y = 0, relative = true
 }), { repeating = true });
 
 hl.bind("SUPER + ALT + H", hl.dsp.window.resize({
