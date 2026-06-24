@@ -5,12 +5,12 @@
 # ----------
 # Made by retrozinndev (João Dias)
 # Licensed under the MIT License
-# From: https://github.com/retrozinndev/Hyprland-dots
+# From: https://github.com/retrozinndev/.config
 
 
 # -------------
 # Array containing directory names to be used by 
-# retrozinndev/Hyprland-Dots install and update
+# retrozinndev/.config install and update
 # scripts.
 # -------------
 config_dirs=(
@@ -18,6 +18,7 @@ config_dirs=(
     "kitty" 
     "colorshell" 
     "fastfetch"
+    "nvim"
 )
 ignored_config_dirs=(
     "hypr/hyprpaper.conf"
@@ -60,13 +61,53 @@ function Send_log() {
 }
 
 # -------------
-# Prints retrozinndev/Hyprland-Dots installation 
+# Prints retrozinndev/.config installation 
 # script's welcome header on stdout
 # -------------
 function Print_header() {
     printf "\n"
-    echo "######################################"
-    echo "## Retrozinndev's Hyprland Dotfiles ##"
-    echo "######################################"
+    echo "#########################"
+    echo "## retrozinndev's dots ##"
+    echo "#########################"
     printf "\n"
+}
+
+# -------------
+# Backup configuration dirs listed in utils.sh script
+# to $bkp_dir (default: ~/dots.bkp)
+# -------------
+function Backup_config() {
+    local XDG_CONFIG_HOME=${XDG_CONFIG_HOME:-"$HOME/.config"}
+    local bkp_dir="$HOME/dots.bkp"
+
+    Send_log "Creating backup in $bkp_dir"
+
+    if [[ -d $bkp_dir ]]; then
+        Send_log "Found existing backup in $bkp_dir!"
+        Send_log warn "Looks like a backup already exists!"
+        echo -n "Would you like to move it to trash/override it? [y/n] "
+        read answer
+        
+        if [[ $answer =~ "y" ]]; then
+            echo "Fine! Previous backup is goning to be moved to trash"
+            trash-put $bkp_dir 2>&1 > /dev/null || (Send_log "Couldn't find trash-cli, falling back to the og 'rm'" ; rm -r $bkp_dir)
+            return Backup_config $@
+        else 
+            echo "Ok! Quitting doing backup because it already exists"
+            return 1
+        fi
+    fi
+
+    # Make backup of existing configurations
+    for dir in ${config_dirs[@]}; do
+        if [[ -d "$XDG_CONFIG_HOME/$dir" ]]
+        then
+            echo "-> backing up $dir"
+            cp -r "$XDG_CONFIG_HOME/$dir" $bkp_dir
+        else
+            Send_log "$dir backup skipped, not found."
+        fi
+    done
+
+    Send_log "Backup done!"
 }

@@ -1,10 +1,6 @@
 -- Wiki: https://wiki.hyprland.org/Configuring/Dwindle-Layout/#config
 
 hl.config {
-    general = {
-        layout = "dwindle";
-    };
-
     dwindle = {
         preserve_split = true
     };

@@ -6,5 +6,6 @@ hl.config {
         anr_missed_pings = 5;
 
         focus_on_activate = false;
+        on_focus_under_fullscreen = 1;
     };
 };

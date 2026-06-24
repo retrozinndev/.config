@@ -1,6 +1,6 @@
 -- Wiki: https://wiki.hyprland.org/Configuring/Binds
 
--- SUPER to launch colorshell's apps-window search
+-- Uncomment if you want to press SUPER to launch application search
 --hl.bind("SUPER + SUPER_L", hl.dsp.exec_cmd("colorshell toggle -w apps-window"));
 
 hl.bind("SUPER + F11", hl.dsp.window.fullscreen());
@@ -8,7 +8,8 @@ hl.bind(" + Print", hl.dsp.exec_cmd("colorshell screenshot"));
 hl.bind("ALT + Print", hl.dsp.exec_cmd("colorshell screenshot active"));
 hl.bind("SUPER + Print", hl.dsp.exec_cmd("colorshell screenshot full"));
 hl.bind("SUPER + SPACE", hl.dsp.exec_cmd("colorshell runner"));
-hl.bind("SUPER + SHIFT + E", hl.dsp.exec_cmd("colorshell toggle -w logout-menu"));
+hl.bind("SUPER + SUPER_L", hl.dsp.exec_cmd("colorshell peek-workspaces"));
+
 
 hl.bind("SUPER + N", hl.dsp.exec_cmd("colorshell toggle -w control-center"));
 hl.bind("SUPER + M", hl.dsp.exec_cmd("colorshell toggle -w center-window"));

@@ -10,4 +10,3 @@ require("./decorations");
 require("./animations");
 require("./autostart");
 require("./rules");
-require("./plugins");

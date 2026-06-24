@@ -6,7 +6,6 @@ local function env_path_append(path)
     hl.env("PATH", os.getenv("PATH") .. ":" .. path);
 end
 
-local home = os.getenv("HOME");
 local env = {
     XCURSOR_THEME = "Adwaita";
     XCURSOR_SIZE = 24;
@@ -16,9 +15,6 @@ local env = {
     MOZ_ENABLE_WAYLAND = 1;
     ELECTRON_OZONE_PLATFORM_HINT = "wayland";
 
-    XMODIFIERS = "@im=fcitx";
-    QT_IM_MODULE = "fcitx";
-    SDL_IM_MODULE = "wayland";
     GSK_RENDERER = "vulkan";
 
     QT_QPA_PLATFORM = "wayland";
@@ -27,18 +23,18 @@ local env = {
 
     SSH_AUTH_SOCK = os.getenv("XDG_RUNTIME_DIR") .. "/gcr/ssh";
 
+    ADW_DISABLE_PORTAL = 0;
     JAVA_HOME = "/lib/jvm/default";
 
     -- XDG
-    XDG_CACHE_HOME = home .. "/.cache";
-    XDG_DATA_HOME = home .. "/.local/share";
-    XDG_CONFIG_HOME = home .. "/.config";
+    XDG_CACHE_HOME = os.getenv("HOME") .. "/.cache";
+    XDG_DATA_HOME = os.getenv("HOME") .. "/.local/share";
+    XDG_CONFIG_HOME = os.getenv("HOME") .. "/.config";
 };
 
 for name, val in pairs(env) do
     hl.env(name, val);
 end
 
-env_path_append(home .. "/.local/bin");
-env_path_append(home .. "/.cargo/bin");
-env_path_append(home .. "/node_modules/.bin");
+env_path_append(os.getenv("HOME") .. "/.local/bin");
+env_path_append(os.getenv("HOME") .. "/.cargo/bin");
