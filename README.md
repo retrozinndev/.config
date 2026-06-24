@@ -1,7 +1,8 @@
 # `retrozinndev/.config`
 My personal dotfiles for [colorshell](https://github.com/retrozinndev/colorshell).
 
-Includes configs like `fastfetch`, `kitty` and `Hyprland` + `colorshell` configs.
+Includes configs like `fastfetch`, `kitty`, `neovim` and `Hyprland` + `colorshell` configs.
+
 Also, this config implements support for [XDG Autostart](https://wiki.archlinux.org/title/XDG_Autostart) even if you're not using 
 [UWSM](https://wiki.archlinux.org/title/Universal_Wayland_Session_Manager)! (you need to manually enable it inside `autostart.lua`)
 
