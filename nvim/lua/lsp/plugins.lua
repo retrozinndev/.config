@@ -1,21 +1,20 @@
 vim.pack.add({
-    { src = "https://github.com/folke/trouble.nvim", name = "Trouble" },
-    { src = "https://github.com/maan2003/lsp_lines.nvim", name = "LspLines" },
-    { src = "https://github.com/nvim-treesitter/nvim-treesitter", name = "Treesitter" }
+    { src = "https://github.com/folke/trouble.nvim" },
+    { src = "https://github.com/rachartier/tiny-inline-diagnostic.nvim" },
+    { src = "https://github.com/nvim-treesitter/nvim-treesitter" }
 });
 
 -- trouble.nvim
 require("trouble").setup();
 
--- lsplines
+-- tiny-inline-diagnostic
 vim.diagnostic.config({
     virtual_text = false,
     virtual_lines = false
 });
-local lslines = require("lsp_lines");
-lslines.setup();
-lslines.toggle();
-
+local tid = require("tiny-inline-diagnostic");
+tid.setup();
+tid.enable();
 
 -- vim.api.nvim_create_autocmd("LspAttach", {
 --     pattern = "*",

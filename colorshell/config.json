@@ -30,7 +30,7 @@
         "max_results": 30,
         "search_on_open": true,
         "ignore_empty_search": true,
-        "show_tips": true
+        "show_tips": false
     },
     "aliases": {
         "terminal": "kitty",

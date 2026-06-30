@@ -9,7 +9,7 @@ vim.keymap.set('n', "<leader>rg", ":Pick grep_live<CR>");
 vim.keymap.set('n', "<leader>xx", ":Trouble diagnostics toggle<CR>");
 
 -- lsp_lines.nvim
-vim.keymap.set('n', "<leader>ll", require("lsp_lines").toggle);
+vim.keymap.set('n', "<leader>ll", require("tiny-inline-diagnostic").toggle);
 
 -- lsp
 vim.keymap.set('n', "<leader>lr", vim.lsp.buf.rename, {

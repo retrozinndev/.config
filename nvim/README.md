@@ -22,7 +22,7 @@ confirm the update by saving the buffer tab(`:w`) or cancel by quitting the tab(
 - [`shaun-mathew/Chameleon.nvim`](https://github.com/shaun-mathew/Chameleon.nvim): change kitty terminal's background according to neovim's one(fixes that border arround neovim when using padding).
 - [`echasnovski/mini.pick`](https://github.com/echasnovski/mini.pick): mini picker for neovim, works just like telescope.
 - [`ThePrimeagen/refactoring.nvim`](https://github.com/ThePrimeagen/refactoring.nvim): a nice refactoring plugin for neovim, supports only a specific set of languages.
-- [`maan2003/lsp_lines.nvim`](https://github.com/maan2003/lsp_lines.nvim): lsp diagnostics integrated in-buffer
+- [`rachartier/tiny-inline-diagnostic.nvim`](https://github.com/rachartier/tiny-inline-diagnostic.nvim): inline lsp diagnostics
 - [`lewis6991/gitsigns.nvim`](https://github.com/lewis6991/gitsigns.nvim): plugin for viewing diffs and change feed in-file.
 - [`rcarriga/nvim-notify`](https://github.com/rcarriga/nvim-notify): notification banners for neovim.
 - [`nvim-lualine/lualine`](https://github.com/nvim-lualine/lualine.nvim): better buffer line.
