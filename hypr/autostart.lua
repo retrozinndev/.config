@@ -5,12 +5,13 @@ local use_uwsm = true;
 
 ---@type table<string>
 local autostart = {
-    "systemctl start --user hyprpolkitagent";
+    "/usr/lib/polkit-gnome/polkit-gnome-authentication-agent-1";
     "systemctl start --user gnome-keyring-daemon";
     "systemctl start --user hyprpaper";
     "systemctl start --user hyprsunset";
     "colorshell";
     "fcitx5";
+    "ipfs daemon --mount";
     "wl-paste --type text --watch cliphist store";
     "wl-paste --type image --watch cliphist store";
 };

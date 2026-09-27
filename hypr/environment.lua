@@ -6,22 +6,26 @@ local function env_path_append(path)
     hl.env("PATH", os.getenv("PATH") .. ":" .. path);
 end
 
+local cursor_theme = "macOS";
+local cursor_size = 24;
+
+
 local home = os.getenv("HOME");
 local env = {
     -- Cursor
-    XCURSOR_THEME = "Adwaita";
-    XCURSOR_SIZE = 24;
-    HYPRCURSOR_THEME = "Adwaita";
-    HYPRCURSOR_SIZE = 24;
+    XCURSOR_THEME = cursor_theme;
+    XCURSOR_SIZE = cursor_size;
+    HYPRCURSOR_THEME = cursor_theme;
+    HYPRCURSOR_SIZE = cursor_size;
 
     MOZ_ENABLE_WAYLAND = 1;
     ELECTRON_OZONE_PLATFORM_HINT = "wayland";
 
     -- IME
-    XMODIFIERS = "@im=ibus";
-    QT_IM_MODULE = "wayland";
-    QT_IM_MODULES = "wayland;ibus";
-    SDL_IM_MODULE = "wayland";
+    XMODIFIERS = "@im=fcitx";
+    QT_IM_MODULE = "fcitx5";
+    QT_IM_MODULES = "wayland;fcitx5";
+    SDL_IM_MODULE = "fcitx5";
 
     GSK_RENDERER = "vulkan";
 

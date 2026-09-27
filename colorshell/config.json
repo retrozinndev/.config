@@ -19,7 +19,9 @@
         "splash": true
     },
     "color": {
-        "backend": "default"
+        "engine": "pywal16",
+        "backend": "default",
+        "scheme": "dark"
     },
     "screen_recording": {
         "include_audio": true
