@@ -15,14 +15,10 @@ local servers = {
         root_markers = { "package.json", "tsconfig.json", "astro.config.mjs" },
         filetypes = { "astro" },
         init_options = {
-        typescript = {
-            tsdk = "node_modules/typescript/lib"
-        }
-    },
-    },
-    pyright = {
-        cmd = { "pyright-langserver", "--stdio" },
-        filetypes = { "python" }
+            typescript = {
+                tsdk = "node_modules/typescript/lib"
+            }
+        },
     },
     somesass_ls = {
         cmd = { "some-sass-language-server", "--stdio" },
@@ -36,10 +32,6 @@ local servers = {
         cmd = { "clangd" },
         filetypes = { "cpp", "c" }
     },
-    nushell = {
-        cmd = { "nu", "--lsp" },
-        filetypes = { "nu" }
-    },
     blueprint_ls = {
         cmd = { "blueprint-compiler", "lsp" },
         filetypes = { "blueprint" }
@@ -48,9 +40,10 @@ local servers = {
         cmd = { "vala-language-server" },
         filetypes = { "vala" }
     },
-    vtsls = {
-        cmd = { "vtsls", "--stdio" },
-        filetypes = { "typescript", "javascript", "typescriptreact", "javascriptreact" }
+    tsgo = {
+        cmd = { "node_modules/.bin/tsc", "--lsp", "-stdio" },
+        filetypes = { "typescript", "javascript", "typescriptreact", "javascriptreact" },
+        root_markers = { "tsconfig.json", "package.json" }
     },
     nil_ls = {
         cmd = { "nil", "--stdio" },
