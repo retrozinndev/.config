@@ -1,0 +1,22 @@
+
+autoload -Uz up-line-or-beginning-search
+autoload -Uz down-line-or-beginning-search
+zle -N up-line-or-beginning-search
+zle -N down-line-or-beginning-search
+
+bindkey '^?'      backward-delete-char          # bs
+bindkey '^[[3~'   delete-char                   # delete
+bindkey '^[[H'    beginning-of-line             # home
+bindkey '^[[F'    end-of-line                   # end
+bindkey '^[[1;5C' forward-word                  # ctrl+right
+bindkey '^[[1;5D' backward-word                 # ctrl+left
+bindkey '^H'      backward-kill-word            # ctrl+bs
+bindkey '^[[3;5~' kill-word                     # ctrl+del
+bindkey '^J'      backward-kill-line            # ctrl+j
+bindkey '^[[D'    backward-char                 # left
+bindkey '^[[C'    forward-char                  # right
+bindkey '^[[A'    up-line-or-beginning-search   # up
+bindkey '^[[B'    down-line-or-beginning-search # down
+
+
+# vim:ft=sh

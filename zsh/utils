@@ -3,6 +3,7 @@ function Path_add() {
     export PATH=$PATH:$@
 }
 
+# Load oh-my-posh PS1
 function Load_omp() {
     mkdir -p $OMP_CACHE
     oh-my-posh init zsh --config "$OMP_CONFIG" > $OMP_CACHE/zsh

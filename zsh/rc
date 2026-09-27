@@ -1,8 +1,14 @@
 source ./env
+source ./aliases
 source ./plugins
+source ./commands
+source ./bindings
 
 Load_omp
 fastfetch
 
+setopt share_history
+setopt append_history
+setopt inc_append_history
 
 # vim:ft=sh

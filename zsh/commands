@@ -1,0 +1,5 @@
+
+# print total disk usage of a directory or file (du -cha file | tail -n 1)
+function dusage() {
+    du -cha $@ | tail -n1
+}
